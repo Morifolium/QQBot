@@ -12,7 +12,7 @@ import random
 
 def keyword(message, uid, gid=None):
     if message[0:2] == "色图":
-        return setu(uid, gid, message[2:])
+        return new_setu(uid, gid, message[2:])
         pass
     elif message[0:2] == "萝莉":
         return loli(uid, gid)
@@ -48,9 +48,9 @@ def new_setu(uid, gid, message):
         for i in message:
             if len(i) > 0:
                 tags = tags + ("tag=" + i + "&")
-        v2_url = "https://api.lolicon.app/setu/v2?" + tags
+        v2_url = "https://api.lolicon.app/setu/v2?size=small&" + tags
         setu_json = requests.get(url=v2_url)
-        setu_url = setu_json.json()["data"][0]["urls"]["original"]
+        setu_url = setu_json.json()["data"][0]["urls"]["small"]
         requests.post(
             url="http://127.0.0.1:5700/send_group_msg",
             data={"group_id": gid, "message": r"[CQ:image,file=" + setu_url + r"]"},

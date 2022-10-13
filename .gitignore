@@ -4,3 +4,4 @@ logs
 __pycache__
 test.json
 test.py
+session.token
