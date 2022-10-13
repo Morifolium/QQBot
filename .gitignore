@@ -1,6 +1,6 @@
 data
 logs
 .vscode
-_pycache_
+__pycache__
 test.json
 test.py
