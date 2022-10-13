@@ -3,3 +3,4 @@ logs
 .vscode
 _pycache_
 test.json
+test.py
